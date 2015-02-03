@@ -1,0 +1,19 @@
+!include d:\toolkit\c\samples\toolkit.inc
+.SUFFIXES: .cpp .c
+.cpp.obj:
+	wpp386 -ox -DNDEBUG $*.cpp
+.c.obj:
+	wcc386 -ox -DNDEBUG $*.c
+
+all:	tc.exe .symbolic
+
+tc.exe:	tc.obj tc.lnk
+	$(LINK) $(LFLAGS) @tc.lnk
+
+tc.obj:	tc.cpp
+
+tc.lnk:	makefile
+	echo system os2v2 > tc.lnk
+	echo name tc.exe >> tc.lnk
+	echo file tc.obj >> tc.lnk
+	echo option modname=TC >> tc.lnk

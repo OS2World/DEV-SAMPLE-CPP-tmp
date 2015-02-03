@@ -1,0 +1,1 @@
+link386 hello, hello.exe,, g:\watcom\lib386\os2\clib3r.lib+g:\watcom\lib386\os2\os2386.lib, hello.def
